@@ -9,6 +9,8 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 
 ### Changed
+- Updated Clipper2 from version 1.3.0 to 1.5.4 for latest bug fixes and improvements
+- Improved CMake configuration for Eigen3 fallback when system package is not found
 
 ## [0.1.7] - 2024-01-11
 

@@ -21,7 +21,7 @@ with open('README.rst') as f:
 """ Specific versions of submodules to use. """
 
 submoduleVersions = {
-    'clipper2': 'Clipper2_1.3.0',
+    'clipper2': 'Clipper2_1.5.4',
     'pybind11': 'v2.11',
     'eigen': '3.4'
 }

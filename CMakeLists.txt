@@ -67,7 +67,12 @@ else(WIN32)
     #target_link_libraries(Clipper2 PUBLIC -lm)
 
     # Find Required packages
-    find_package(Eigen3 3.3 REQUIRED)
+    find_package(Eigen3 3.3 QUIET)
+    if(NOT Eigen3_FOUND)
+        # Fallback to manual Eigen3 include directory
+        message(STATUS "Eigen3 not found via find_package, using external/eigen")
+        set(EIGEN3_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/eigen)
+    endif()
 
 endif(WIN32)
 
