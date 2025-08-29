@@ -1,0 +1,37 @@
+[build-system]
+requires = [
+    "setuptools>=45",
+    "wheel",
+    "cmake>=3.15",
+    "pybind11>=2.11",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.cibuildwheel]
+# Build for Python 3.7 and later
+build = "cp37-* cp38-* cp39-* cp310-* cp311-* cp312-*"
+
+# Skip 32-bit builds and PyPy
+skip = "*-win32 *i686 pp*"
+
+# Install system dependencies before building
+before-build-linux = """
+if command -v yum &> /dev/null; then
+  yum install -y eigen3-devel cmake3 gcc-c++ make
+  ln -sf /usr/bin/cmake3 /usr/bin/cmake || true
+elif command -v apt-get &> /dev/null; then
+  apt-get update && apt-get install -y libeigen3-dev cmake build-essential
+fi
+"""
+before-build-macos = "brew install eigen cmake"
+before-build-windows = "choco install eigen3 cmake --confirm"
+
+# Set environment variables for CMake
+environment = "CMAKE_ARGS='-DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=17'"
+
+# Test the built wheels
+test-requires = "numpy"
+test-command = "python -c \"import pyclipr; print('pyclipr imported successfully')\""
+
+# Only repair wheels that need it (avoid unnecessary processing)
+repair-wheel-command = ""

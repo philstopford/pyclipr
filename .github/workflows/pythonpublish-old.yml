@@ -1,11 +1,11 @@
-# This workflows will upload a Python Package using Twine when a release is created
-# For more information see: https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions#publishing-to-package-registries
+# DEPRECATED: This workflow has been replaced by build-wheels.yml
+# This workflow is disabled. Use build-wheels.yml instead.
 
-name: Upload Python Package
+name: Upload Python Package (DEPRECATED)
 
-on:
-  push:
-    branches: [ main ]
+# on:
+#   push:
+#     branches: [ main ]
 
 jobs:
   deploy:
