@@ -1,8 +1,8 @@
 Pyclipr - Python Polygon and Offsetting Library (Clipper2 Bindings)
 ========================================================================
 
-.. image:: https://github.com/drlukeparry/pyclipr/actions/workflows/pythonpublish.yml/badge.svg
-    :target: https://github.com/drlukeparry/pyclipr/actions
+.. image:: https://github.com/philstopford/pyclipr/actions/workflows/build-wheels.yml/badge.svg
+    :target: https://github.com/philstopford/pyclipr/actions
 .. image:: https://badge.fury.io/py/pyclipr.svg
     :target: https://badge.fury.io/py/pyclipr
 .. image:: https://static.pepy.tech/personalized-badge/pyclipr?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads
@@ -23,8 +23,7 @@ For further information, see the latest `release notes <https://github.com/drluk
 Installation
 *************
 
-Installation using pre-built packages are currently supported on Windows, Mac but excludes Linux because pre-built
-packages are unsupported via PyPi. Otherwise, no special requirements or prerequisites are necessary.
+Installation using pre-built packages are currently supported on Windows, Mac, and Linux via PyPi. No special requirements or prerequisites are necessary.
 
 .. code:: bash
 
